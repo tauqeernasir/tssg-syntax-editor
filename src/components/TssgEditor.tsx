@@ -29,28 +29,29 @@ type TssgEditorProps = {
 };
 
 const savedValue = window.localStorage.getItem("savedValue");
-const defaultValue = `/**
-* Example TSSG Syntax
-* Data Types:
-* \tstring | s, number | n, integer | i, boolean | b, [], {}
-* Marker:
-* \tuse \`!\` sign to mark an object property as required
-* Supported functions:
-* \toneOf, allOf, anyOf
-*
-* For more information read \`how to use\` guide.
-* This project is Work In Progress. It will soon support other swagger features.
-*/
-
-{
-\tname: s,
-\tage: !n,
-\taddress: {
-    \tcity: string,
-        country: !string
-    },
-    choices: oneOf(s, n, b),
-}`;
+const defaultValue = `
+Schemas {
+  BaseUser {
+  	_id: string,
+    name: string,
+    email: string,
+    isActive: boolean,
+    profileImageUrl: string,
+  }
+  
+  Employee extends BaseUser {
+  	department: string,
+    roles: string[],
+  }
+  
+  Manager extends BaseUser, Employee {
+  	accessList: {
+    	type: string,
+        active: boolean,
+    }[]
+  }
+}
+`;
 const savedOrDefaultValue = savedValue || defaultValue;
 
 export const TssgEditor = (props: TssgEditorProps): ReactElement => {
