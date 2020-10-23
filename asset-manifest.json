@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/tssg-syntax-editor/static/css/main.0c6f7cd8.chunk.css",
+    "main.js": "/tssg-syntax-editor/static/js/main.94fa5c64.chunk.js",
+    "main.js.map": "/tssg-syntax-editor/static/js/main.94fa5c64.chunk.js.map",
+    "runtime-main.js": "/tssg-syntax-editor/static/js/runtime-main.52010163.js",
+    "runtime-main.js.map": "/tssg-syntax-editor/static/js/runtime-main.52010163.js.map",
+    "static/css/2.9df7aa81.chunk.css": "/tssg-syntax-editor/static/css/2.9df7aa81.chunk.css",
+    "static/js/2.798daf4a.chunk.js": "/tssg-syntax-editor/static/js/2.798daf4a.chunk.js",
+    "static/js/2.798daf4a.chunk.js.map": "/tssg-syntax-editor/static/js/2.798daf4a.chunk.js.map",
+    "index.html": "/tssg-syntax-editor/index.html",
+    "precache-manifest.cfc1505396ec4c62d0edde805bc376f3.js": "/tssg-syntax-editor/precache-manifest.cfc1505396ec4c62d0edde805bc376f3.js",
+    "service-worker.js": "/tssg-syntax-editor/service-worker.js",
+    "static/css/2.9df7aa81.chunk.css.map": "/tssg-syntax-editor/static/css/2.9df7aa81.chunk.css.map",
+    "static/css/main.0c6f7cd8.chunk.css.map": "/tssg-syntax-editor/static/css/main.0c6f7cd8.chunk.css.map",
+    "static/js/2.798daf4a.chunk.js.LICENSE.txt": "/tssg-syntax-editor/static/js/2.798daf4a.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.52010163.js",
+    "static/css/2.9df7aa81.chunk.css",
+    "static/js/2.798daf4a.chunk.js",
+    "static/css/main.0c6f7cd8.chunk.css",
+    "static/js/main.94fa5c64.chunk.js"
+  ]
+}
