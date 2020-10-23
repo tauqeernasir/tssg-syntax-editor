@@ -24,6 +24,10 @@
 Writing OpenAPI Schema can be tiresome and time wasting task if you write a lot of API Documentation. Updating existing Schema can also be cumbersome and confusing especially when project grows to hundreds of APIs.
 TSSG is here to help you write schema in an easy, clean and concise way. We have proposed a new and easy to understand Syntax/Grammar for this. It allows you to write less and get full OpenAPI Schema without writing and repeating same line again and again.
 
+### Have a look at the parser
+
+This editor is base on the `TSSG Parser`. You can have a look at (https://github.com/tauqeernasir/tssg-syntax-parser)[https://github.com/tauqeernasir/tssg-syntax-parser]
+
 ### Project Roadmap
 
 Our aim is to build a tool that helps you in splitting your APIs Schemas and Endpoints Definitions into separate files so that it's easy to maintain and update/edit the target APIs.
@@ -33,7 +37,7 @@ Below is our roadmap:
 - [x] TSSG Syntax Parser (Alpha Version released)
 - [x] TSSG to OpenAPI Transformer (Alpha Version released)
 - [x] TSSG Editor (Alpha Version released)
-- [ ] OpenAPI to TSSG Syntax Transformer (WIP)
+- [ ] OpenAPI to TSSG Syntax Transformer (WIP)g
 - [ ] TSSG CLI (WIP)
 
 ### How to use?
