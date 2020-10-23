@@ -26,7 +26,7 @@ TSSG is here to help you write schema in an easy, clean and concise way. We have
 
 ### Have a look at the parser
 
-This editor is base on the `TSSG Parser`. You can have a look at (https://github.com/tauqeernasir/tssg-syntax-parser)[https://github.com/tauqeernasir/tssg-syntax-parser]
+> This editor is based on the `TSSG Parser`. You can have a look at [https://github.com/tauqeernasir/tssg-syntax-parser](https://github.com/tauqeernasir/tssg-syntax-parser)
 
 ### Project Roadmap
 
