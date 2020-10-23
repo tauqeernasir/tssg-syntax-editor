@@ -2,7 +2,7 @@
   "name": "tssg-editor",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://jskod.github.io/tssg-editor",
+  "homepage": "http://tauqeernasir.github.io/tssg-syntax-editor",
   "dependencies": {
     "@chakra-ui/core": "^0.7.0",
     "@emotion/core": "^10.0.28",
