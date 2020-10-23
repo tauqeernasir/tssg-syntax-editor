@@ -155,21 +155,17 @@ To write the above schema, you can simply do the following:
 
 ```
 {
-    name: !string,
-    age: number,
-    email: !string,
-    address: !{
-        street: string,
-        city: string,
-        country: !string,
-        zipcode: string,
+    name: string,
+    age?: number,
+    email: string,
+    address: {
+        street?: string,
+        city?: string,
+        country: string,
+        zipcode?: string,
     }
 }
 ```
-
-You can mark a property as `required` by using `!` (exclamation mark) in front of data type. Above mentioned syntax will produce the exact same OpenAPI Schema shown above example.
-
-> Notice `!` in the start of address value.
 
 **Arrays**
 
@@ -193,21 +189,25 @@ Above schema can be written in TSSG as follows:
 
 ```
 {
-    data: [string]
+    data: string[]
 }
 ```
 
-Look, how simple it is to define `array of string` in one simple line.
-
-You can also mark `data` property as required using `!` sign.
+or something more complex as follow:
 
 ```
 {
-    data: ![string]
+    data: {
+      _id: string,
+      name: string,
+      age: number
+    }[]
 }
 ```
 
-Above TSSG syntax will produce following Schema:
+Look, how simple it is to define `array of string` and `array of object` in a few lines.
+
+Above first TSSG syntax will produce following Schema:
 
 ```json
 {
@@ -275,47 +275,20 @@ Above schema can be written in TSSG as follow:
 
 ```
 {
-    data: [{
-        name: string,
-        age: number,
-        email: string,
-        address: {
-            street: string,
-            city: string,
+    data: {
+        name?: string,
+        age?: number,
+        email?: string,
+        address?: {
+            street?: string,
+            city?: string,
             country: string,
-            zipcode: string,
+            zipcode?: string,
         }
-    }]
+    }[]
 }
 ```
 
-> If `data` property is required, just mark that required using `!` sign.
-
-**Enums**
-
-You can use the enum keyword to specify possible values of a request parameter or a model property. For example, consider the following schema:
-
-```json
-{
-    "type": "object",
-    "properties": {
-        "colors": {
-            "type": "string",
-            "enum": [
-                "red",
-                "green",
-                "blue"
-            ]
-        }
-    }
-}
-```
-Above schema can be written in TSSG as follows:
-```
-{
-    colors: enumOf(string, "red", "green", "blue"),
-}
-```
 ## Contributors ✨
 
 Thanks goes to these wonderful people
