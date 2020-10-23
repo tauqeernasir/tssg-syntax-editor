@@ -39,11 +39,11 @@ export const App = (): ReactElement => {
     <>
       <Box h={navHeight} position={"relative"}>
         <Header
-          rightSection={
-            <Button onClick={onOpen} size={"md"}>
-              <Icon name={"info-outline"} mr={2} /> How to use?
-            </Button>
-          }
+        // rightSection={
+        //   <Button onClick={onOpen} size={"md"}>
+        //     <Icon name={"info-outline"} mr={2} /> How to use?
+        //   </Button>
+        // }
         />
       </Box>
       <Flex>

@@ -22,16 +22,16 @@ export const Header = (props: HeaderProps): ReactElement => {
               The Swagger Schema Generator
             </Heading>
           </Flex>
-          <Text>Write schema in an easy, concise and short way</Text>
+          <Text>Write typescript like syntax and generate OPEN API Spec</Text>
         </Box>
         <Box>
           <Flex alignItems={"center"} mr={4}>
             <Box mr={4} mt={2}>
               <GitHubButton
-                href="https://github.com/jskod/tssg-editor"
+                href="https://github.com/tauqeernasir/tssg-syntax-parser"
                 data-size="large"
                 data-show-count={true}
-                aria-label="Star jskod/tssg-editor on GitHub"
+                aria-label="Star tauqeernasir/tssg-syntax-parser on GitHub"
               >
                 Star
               </GitHubButton>
