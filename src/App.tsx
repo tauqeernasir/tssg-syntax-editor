@@ -8,6 +8,7 @@ import {
   TabPanels,
   TabPanel,
   Tab,
+  Stack,
 } from "@chakra-ui/core";
 import ReactJson from "react-json-view";
 
@@ -26,6 +27,7 @@ export const App = (): ReactElement => {
   const navHeight = 80;
   const [parsedData, setParsedData] = useState<any>({});
   const [jsonCopied, setJsonCopied] = useState(false);
+  const [displayPlain, setDisplayPlain] = useState(false);
 
   useEffect(() => {
     setJsonCopied(false);
@@ -66,26 +68,64 @@ export const App = (): ReactElement => {
               <TabPanels>
                 <TabPanel>
                   <Box pos="relative">
-                    <Box pos="absolute" right="10px" top="10px">
-                      <CopyToClipboard
-                        text={JSON.stringify(parsedData.parsedSpec, null, 2)}
-                        onCopy={() => setJsonCopied(true)}
-                      >
-                        <Button size="sm" variant="solid" variantColor="blue">
-                          {jsonCopied ? "Copied" : "Copy to clipboard"}
+                    <Box pos="absolute" right="10px" top="10px" zIndex={99999}>
+                      <Stack>
+                        <CopyToClipboard
+                          text={JSON.stringify(parsedData.parsedSpec, null, 2)}
+                          onCopy={() => setJsonCopied(true)}
+                        >
+                          <Button
+                            width="200px"
+                            fontSize="sm"
+                            variant="solid"
+                            variantColor="blue"
+                          >
+                            {jsonCopied ? "Copied" : "Copy to clipboard"}
+                          </Button>
+                        </CopyToClipboard>
+                        <Button
+                          width="200px"
+                          fontSize="sm"
+                          variant="solid"
+                          variantColor="orange"
+                          onClick={() => {
+                            setDisplayPlain(!displayPlain);
+                          }}
+                        >
+                          {displayPlain
+                            ? "Display JSON View"
+                            : "Display Plain Text"}
                         </Button>
-                      </CopyToClipboard>
+                      </Stack>
                     </Box>
-                    <Box
-                      as="pre"
-                      style={{
-                        height: wHeight - navHeight - 42,
-                        width: wWidth / 2,
-                        overflowY: "scroll",
-                      }}
-                    >
-                      {JSON.stringify(parsedData.parsedSpec, null, 2)}
-                    </Box>
+                    {displayPlain ? (
+                      <Box
+                        as="pre"
+                        style={{
+                          height: wHeight - navHeight - 42,
+                          width: wWidth / 2,
+                          overflowY: "scroll",
+                        }}
+                      >
+                        {JSON.stringify(parsedData.parsedSpec, null, 2)}
+                      </Box>
+                    ) : (
+                      <ReactJson
+                        src={parsedData.parsedSpec ?? {}}
+                        displayDataTypes={false}
+                        enableClipboard={true}
+                        displayObjectSize={true}
+                        name={null}
+                        indentWidth={2}
+                        theme="tomorrow"
+                        style={{
+                          position: "absolute",
+                          height: wHeight - navHeight - 42,
+                          width: "100%",
+                          overflowY: "scroll",
+                        }}
+                      />
+                    )}
                   </Box>
                 </TabPanel>
                 <TabPanel>
