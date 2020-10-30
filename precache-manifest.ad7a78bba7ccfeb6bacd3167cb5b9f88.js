@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "49a9cb82ac80cebaec3e65713cfdc00e",
+    "revision": "d233bb22a497105a4286b9e62a6c69b3",
     "url": "/tssg-syntax-editor/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/tssg-syntax-editor/static/css/2.9df7aa81.chunk.css"
   },
   {
-    "revision": "b3be2175833f8fce464f",
+    "revision": "d9fc33f16f8e359ed48d",
     "url": "/tssg-syntax-editor/static/css/main.0c6f7cd8.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/tssg-syntax-editor/static/js/2.2b86ca16.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "b3be2175833f8fce464f",
-    "url": "/tssg-syntax-editor/static/js/main.46230b79.chunk.js"
+    "revision": "d9fc33f16f8e359ed48d",
+    "url": "/tssg-syntax-editor/static/js/main.580879d3.chunk.js"
   },
   {
     "revision": "55f4f8c13a53197328ac",
