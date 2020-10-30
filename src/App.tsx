@@ -12,6 +12,12 @@ import {
 } from "@chakra-ui/core";
 import ReactJson from "react-json-view";
 
+// @ts-ignore
+import prettier from "prettier/standalone";
+// @ts-ignore
+import typescriptPrettier from "prettier/parser-typescript";
+// @ts-ignore
+
 import "./index.css";
 
 import { Icon, useDisclosure } from "@chakra-ui/core/dist";
@@ -22,6 +28,10 @@ import { TssgEditor } from "./components/TssgEditor";
 
 // @ts-ignore
 import { CopyToClipboard } from "react-copy-to-clipboard";
+// @ts-ignore
+import SyntaxHighlighter from "react-syntax-highlighter";
+// @ts-ignore
+import { nightOwl } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 export const App = (): ReactElement => {
   const navHeight = 80;
@@ -61,6 +71,8 @@ export const App = (): ReactElement => {
             <Tabs bg="gray.900" variantColor="yellow">
               <TabList>
                 <Tab>Open API Spec</Tab>
+                <Tab>Mongoose Schemas</Tab>
+                <Box flex={1} />
                 <Tab>AST</Tab>
                 <Tab>Meta</Tab>
               </TabList>
@@ -107,7 +119,13 @@ export const App = (): ReactElement => {
                           overflowY: "scroll",
                         }}
                       >
-                        {JSON.stringify(parsedData.parsedSpec, null, 2)}
+                        <SyntaxHighlighter
+                          showLineNumbers
+                          language="json"
+                          style={nightOwl}
+                        >
+                          {JSON.stringify(parsedData.parsedSpec, null, 2)}
+                        </SyntaxHighlighter>
                       </Box>
                     ) : (
                       <ReactJson
@@ -128,6 +146,30 @@ export const App = (): ReactElement => {
                     )}
                   </Box>
                 </TabPanel>
+                <TabPanel>
+                  <Box
+                    as="pre"
+                    style={{
+                      height: wHeight - navHeight - 42,
+                      width: wWidth / 2,
+                      overflowY: "scroll",
+                    }}
+                  >
+                    <SyntaxHighlighter
+                      showLineNumbers
+                      language="javascript"
+                      style={nightOwl}
+                    >
+                      {parsedData.parsedMongooseSchemas
+                        ? prettier.format(parsedData.parsedMongooseSchemas, {
+                            parser: "typescript",
+                            plugins: [typescriptPrettier],
+                          })
+                        : ""}
+                    </SyntaxHighlighter>
+                  </Box>
+                </TabPanel>
+                <TabPanel>{}</TabPanel>
                 <TabPanel>
                   <Box>
                     <ReactJson

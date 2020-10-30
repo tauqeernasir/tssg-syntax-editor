@@ -9,6 +9,8 @@ import debounce from "lodash.debounce";
 import SsgToOASParser from "@tssg/syntax-parser/dist/transformer/index";
 // @ts-ignore
 import SsgASTParser from "@tssg/syntax-parser/dist/parser/parser";
+// @ts-ignore
+import OASToMongoose from "@tssg/syntax-parser/dist/addons/mongoose/mongoose-transformer";
 import "codemirror/addon/edit/closebrackets";
 import "codemirror/addon/edit/matchbrackets";
 import "codemirror/addon/search/match-highlighter";
@@ -69,7 +71,8 @@ export const TssgEditor = (props: TssgEditorProps): ReactElement => {
         try {
           const parsedSpec = ssgToOASParser(value);
           const parsedAst = ssgASTParser(value);
-          setParsedData({ parsedSpec, parsedAst });
+          const parsedMongooseSchemas = OASToMongoose(parsedSpec);
+          setParsedData({ parsedSpec, parsedAst, parsedMongooseSchemas });
           window.localStorage.setItem("savedValue", value);
           setParsedError("");
         } catch (e) {
